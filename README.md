@@ -79,11 +79,19 @@ The project uses Vite as the build tool, providing fast hot module replacement (
 
 ## Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
+1. Fork the repository: [Mahendra0006/project-management-dashboard](https://github.com/Mahendra0006/project-management-dashboard)
+2. Clone it to your local machine:
+   ```bash
+   git clone https://github.com/Mahendra0006/project-management-dashboard.git
+   cd project-management-dashboard
+   ```
+3. git commit -m "Add: Your feature description"
+4. Push to the branch (https://github.com/Mahendra0006/project-management-dashboard)
 5. Open a Pull Request
+
+## Live Demo
+
+[🔗 GitHub Repository](https://github.com/Mahendra0006/project-management-dashboard)
 
 ## License
 
