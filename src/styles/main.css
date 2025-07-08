@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.app-container {
+  min-height: 100vh;
+}
+
+.main-content {
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  margin: 8px 0;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+body.dark-mode,
+.dark-mode .main-content {
+  background-color: #121212 !important;
+  color: #ffffff;
+}
+
+.dark-mode .card,
+.dark-mode .card-body {
+  background-color: #1f1f1f !important;
+  color: #ffffff;
+}
+.ql-editor {
+  color: #000 !important;
+}

@@ -1,0 +1,23 @@
+.text-indigo {
+  color: #5b21b6;
+}
+
+.btn-indigo {
+  background-color: #5b21b6;
+  color: #fff;
+  border: none;
+}
+
+.btn-indigo:hover {
+  background-color: #4c1d95;
+}
+
+.project-card {
+  transition: all 0.2s ease-in-out;
+  border-radius: 1rem;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
