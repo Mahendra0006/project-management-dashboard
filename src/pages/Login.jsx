@@ -14,15 +14,18 @@ import { toast } from "react-toastify";
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const isAuthenticated = useSelector((state) => state.auth.user !== null);
   const error = useSelector((state) => state.auth.error);
-  const loading = useSelector((state) => state.auth.loading);
 
   useEffect(() => {
     if (error) {
       toast.error(error);
       dispatch(clearError());
     }
-  }, [error, dispatch]);
+    if (isAuthenticated) {
+      navigate("/dashboard");
+    }
+  }, [error, isAuthenticated, navigate, dispatch]);
 
   const validationSchema = Yup.object().shape({
     email: Yup.string().email("Invalid email").required("Email is required"),
@@ -56,6 +59,10 @@ const Login = () => {
     }
   };
 
+  if (isAuthenticated) {
+    return <Navigate to="/dashboard" replace />;
+  }
+
   return (
     <div className="min-vh-100 d-flex align-items-center">
       <div className="container">
@@ -88,7 +95,6 @@ const Login = () => {
                           }`}
                           id="email"
                           placeholder="Enter your email"
-                          disabled={loading}
                         />
                         {errors.email && touched.email && (
                           <div className="invalid-feedback d-block">
@@ -108,7 +114,6 @@ const Login = () => {
                             errors.role && touched.role ? "is-invalid" : ""
                           }`}
                           id="role"
-                          disabled={loading}
                         >
                           <option value="">Select role...</option>
                           <option value="admin">Admin</option>
@@ -124,21 +129,9 @@ const Login = () => {
                         <button
                           type="submit"
                           className="btn btn-lg text-white"
-                          disabled={loading}
                           style={{ backgroundColor: "#6c5ce7" }}
                         >
-                          {loading ? (
-                            <>
-                              <span
-                                className="spinner-border spinner-border-sm me-1"
-                                role="status"
-                                aria-hidden="true"
-                              ></span>
-                              Logging in...
-                            </>
-                          ) : (
-                            "Login"
-                          )}
+                          Login
                         </button>
                       </div>
                     </Form>
